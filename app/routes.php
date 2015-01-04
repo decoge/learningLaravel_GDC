@@ -13,5 +13,17 @@
 
 Route::get('/', function()
 {
-	return View::make('hello');
+	//return View::make('hello');
+    return "Hello world";
 });
+
+Route::get('/about', function()
+{
+   return "Here comes about page";
+});
+
+Route::get('/contact', function()
+{
+   return "Here comes contact page";
+});
+
