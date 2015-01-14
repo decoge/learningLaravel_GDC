@@ -20,7 +20,8 @@ Route::get('/', function()
 
 Route::get('/about', function()
 {
-   return "Here comes about page";
+   //return "Here comes about page";
+    return View::make('about');
 });
 
 Route::get('/contact', function()
