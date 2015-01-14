@@ -26,6 +26,26 @@ Route::get('/about', function()
 
 Route::get('/contact', function()
 {
-   return "Here comes contact page";
+   //return "Here comes contact page";
+    return View::make('contact');
+});
+
+Route::post('/contact', function()
+{
+    $data = Input::all();
+    $rules = array(
+            'subject' => 'required',
+            'message' => 'required'
+    );
+    
+    $validator = Validator::make($data,$rules);
+    
+    if($validator->fails())
+    {
+        return Redirect::to('contact')->withErrors($validator)->withInput();
+    }
+    
+    return 'Your message has been sent';
+                
 });
 
